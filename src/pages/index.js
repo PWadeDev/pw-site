@@ -1,13 +1,16 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
+import LandingSection from "../components/LandingSection/LandingSection"
+
+import "../styles.scss"
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Portfolio" />
+    <LandingSection></LandingSection>
+    <div>sdas</div>
   </Layout>
 )
 
