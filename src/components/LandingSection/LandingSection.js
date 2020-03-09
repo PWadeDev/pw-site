@@ -7,9 +7,8 @@ import particleOptions from "./ParticleOptions";
 
 const LandingSection = () => (
   <div className="landing-section">
-    <Particles params={particleOptions}>
-      <TypingEffectText></TypingEffectText>
-    </Particles>
+    <Particles params={particleOptions}></Particles>
+    <TypingEffectText></TypingEffectText>
   </div>
 );
 

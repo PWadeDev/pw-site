@@ -1,9 +1,15 @@
 import React from "react";
+import ReactDOM from "react-dom";
 
 import "./TypingEffectText.scss";
 
-const typedTextSpan = ReactDOM.findDOMNode(".typed-text");
-const cursorSpan = ReactDOM.findDOMNode(".cursor");
+/*
+const typedTextSpan = ReactDOM.findDOMNode(
+  document.getElementsByClassName("TypingEffectText")
+);
+const cursorSpan = ReactDOM.findDOMNode(
+  document.getElementsByClassName(".cursor")
+);
 const textArray = ["hard", "fun", "a journey", "LIFE"];
 const typingDelay = 200;
 const erasingDelay = 100;
@@ -47,16 +53,15 @@ document.addEventListener("DOMContentLoaded", function() {
   // On DOM Load initiate the effect
   if (textArray.length) setTimeout(type, newTextDelay + 250);
 });
+*/
 
 const TypingEffectText = () => (
-  <>
-    <div class="container">
-      <p>
-        Coding is <span class="typed-text"></span>
-        <span class="cursor">&nbsp;</span>
-      </p>
-    </div>
-  </>
+  <div className="typing-effect">
+    <p>
+      Coding is <span className="typing-effect--typed-text"></span>
+      <span className="typing-efect--cursor">&nbsp;</span>
+    </p>
+  </div>
 );
 
 export default TypingEffectText;
