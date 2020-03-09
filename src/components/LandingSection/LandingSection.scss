@@ -5,6 +5,9 @@
   width: 100%;
   height: 100%;
   background: $neutral-color-1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   /* ToDo: Test later
   background-image: linear-gradient(
     to bottom,
