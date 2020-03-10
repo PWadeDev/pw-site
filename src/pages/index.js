@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
-import Layout from "../components/layout";
-import SEO from "../components/seo";
-import LandingSection from "../components/LandingSection/LandingSection";
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import LandingSection from '../components/LandingSection/LandingSection';
 
-import "../styles.scss";
+import '../styles.scss';
 
 const IndexPage = () => (
   <Layout>

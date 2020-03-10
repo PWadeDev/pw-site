@@ -1,8 +1,9 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-import "./TypingEffectText.scss";
+import './TypingEffectText.scss';
 
+function setUp() {}
 /*
 const typedTextSpan = ReactDOM.findDOMNode(
   document.getElementsByClassName("TypingEffectText")

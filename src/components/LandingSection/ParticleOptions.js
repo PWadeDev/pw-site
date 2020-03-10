@@ -8,13 +8,13 @@ const particleOptions = {
       },
     },
     color: {
-      value: "#ffffff",
+      value: '#ffffff',
     },
     shape: {
-      type: "circle",
+      type: 'circle',
       stroke: {
         width: 0,
-        color: "#000000",
+        color: '#000000',
       },
       polygon: {
         nb_sides: 5,
@@ -43,17 +43,17 @@ const particleOptions = {
     line_linked: {
       enable: true,
       distance: 150,
-      color: "#77A6F7",
+      color: '#77A6F7',
       opacity: 0.1,
       width: 1,
     },
     move: {
       enable: true,
       speed: 4,
-      direction: "none",
+      direction: 'none',
       random: false,
       straight: false,
-      out_mode: "out",
+      out_mode: 'out',
       bounce: false,
       attract: {
         enable: false,
@@ -63,15 +63,15 @@ const particleOptions = {
     },
   },
   interactivity: {
-    detect_on: "canvas",
+    detect_on: 'canvas',
     events: {
       onhover: {
         enable: true,
-        mode: "grab",
+        mode: 'grab',
       },
       onclick: {
         enable: false,
-        mode: "push",
+        mode: 'push',
       },
       resize: true,
     },
