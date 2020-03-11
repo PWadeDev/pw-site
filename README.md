@@ -8,6 +8,13 @@ First ToDo of this project.
 
 To be created when portfolio is finished.
 
+3. **Current ToDos**
+
+- Add Lint
+- Finish Landing-Section
+- Arrow to Move towards next section
+- Navigation starts at next section
+
 <!--
 ## 🧐 What's inside?
 

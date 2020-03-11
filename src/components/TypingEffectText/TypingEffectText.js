@@ -1,68 +1,95 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { useState, useRef } from 'react';
+import PropTypes from 'prop-types';
 
 import './TypingEffectText.scss';
 
-function setUp() {}
-/*
-const typedTextSpan = ReactDOM.findDOMNode(
-  document.getElementsByClassName("TypingEffectText")
-);
-const cursorSpan = ReactDOM.findDOMNode(
-  document.getElementsByClassName(".cursor")
-);
-const textArray = ["hard", "fun", "a journey", "LIFE"];
+const textArray = [' a', ' Patrick Wade', ' a developer'];
 const typingDelay = 200;
 const erasingDelay = 100;
-const newTextDelay = 2000; // Delay between current and next text
-let textArrayIndex = 0;
-let charIndex = 0;
 
-function type() {
-  debugger;
-  if (charIndex < textArray[textArrayIndex].length) {
-    if (!cursorSpan.classList.contains("typing"))
-      cursorSpan.classList.add("typing");
-    typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
-    charIndex++;
-    setTimeout(type, typingDelay);
+function type(charIndex, arrayIndex, textSpan, cursorSpan) {
+  console.log('type executed');
+  if (charIndex < textArray[arrayIndex].length) {
+    if (!cursorSpan.current.classList.contains('typing'))
+      cursorSpan.current.classList.add('typing');
+    textSpan.current.textContent += textArray[arrayIndex].charAt(charIndex);
   } else {
-    cursorSpan.classList.remove("typing");
-    setTimeout(erase, newTextDelay);
+    /*cursorSpan.current.classList.remove('typing');
+    setTimeout(
+      erase(charIndex, arrayIndex, textSpan, cursorSpan),
+      newTextDelay
+    );*/
   }
 }
 
-function erase() {
+function erase(charIndex, arrayIndex, textSpan, cursorSpan, setCharIndex) {
   if (charIndex > 0) {
-    if (!cursorSpan.classList.contains("typing"))
-      cursorSpan.classList.add("typing");
-    typedTextSpan.textContent = textArray[textArrayIndex].substring(
+    if (!cursorSpan.current.classList.contains('typing'))
+      cursorSpan.current.classList.add('typing');
+    textSpan.current.textContent = textArray[arrayIndex].substring(
       0,
       charIndex - 1
     );
     charIndex--;
-    setTimeout(erase, erasingDelay);
+    setTimeout(
+      erase(charIndex, arrayIndex, textSpan, cursorSpan, setCharIndex),
+      erasingDelay
+    );
   } else {
-    cursorSpan.classList.remove("typing");
-    textArrayIndex++;
-    if (textArrayIndex >= textArray.length) textArrayIndex = 0;
-    setTimeout(type, typingDelay + 1100);
+    cursorSpan.current.classList.remove('typing');
+    arrayIndex++;
+    if (arrayIndex >= textArray.length) arrayIndex = 0;
+    setTimeout(
+      type(charIndex, arrayIndex, textSpan, cursorSpan, setCharIndex),
+      typingDelay + 1100
+    );
   }
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-  // On DOM Load initiate the effect
-  if (textArray.length) setTimeout(type, newTextDelay + 250);
-});
-*/
+const TypingEffectText = startTime => {
+  const [arrayIndex, setArrayIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [firstStart, setFirstStart] = useState(true);
 
-const TypingEffectText = () => (
-  <div className="typing-effect">
-    <p>
-      Coding is <span className="typing-effect--typed-text"></span>
-      <span className="typing-efect--cursor">&nbsp;</span>
-    </p>
-  </div>
-);
+  const textSpan = useRef(null);
+  const cursorSpan = useRef(null);
+
+  React.useEffect(() => {
+    let timer;
+    if (firstStart) {
+      console.log('if');
+      console.log(typingDelay);
+      timer = setTimeout(() => {
+        type(charIndex, arrayIndex, textSpan, cursorSpan);
+        setCharIndex(charIndex + 1);
+        setFirstStart(false);
+      }, startTime);
+    } else {
+      console.log('else');
+      timer = setTimeout(() => {
+        type(charIndex, arrayIndex, textSpan, cursorSpan);
+        setCharIndex(charIndex + 1);
+      }, typingDelay);
+    }
+
+    return () => clearTimeout(timer);
+  }, [textSpan.current.textContent]);
+
+  return (
+    <div>
+      <p className="typing-effect">
+        Hello, I am
+        <span className="typing-effect--typed-text" ref={textSpan}></span>
+        <span className="typing-effect--cursor" ref={cursorSpan}>
+          &nbsp;
+        </span>
+      </p>
+    </div>
+  );
+};
+
+TypingEffectText.propTypes = {
+  startTime: PropTypes.node.isRequired,
+};
 
 export default TypingEffectText;

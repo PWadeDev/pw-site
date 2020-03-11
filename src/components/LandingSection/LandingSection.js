@@ -8,7 +8,7 @@ import particleOptions from './ParticleOptions';
 const LandingSection = () => (
   <div className="landing-section">
     <Particles params={particleOptions}></Particles>
-    <TypingEffectText></TypingEffectText>
+    <TypingEffectText startTime="2000"></TypingEffectText>
   </div>
 );
 
