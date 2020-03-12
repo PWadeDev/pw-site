@@ -28,5 +28,14 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`,
       },
     },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: `${__dirname}/src/images/svg`,
+        },
+      },
+    },
+    `gatsby-plugin-smoothscroll`,
   ],
 };

@@ -1,3 +1,17 @@
+@import '../variables.scss';
+
+.test-section-1 {
+  width: 100vw;
+  height: 100vh;
+  background-color: $neutral-color-7;
+}
+
+.test-section-2 {
+  width: 100vw;
+  height: 100vh;
+  background-color: $neutral-color-5;
+}
+
 /* ToDoo: Refactor
 html {
   font-family: sans-serif;

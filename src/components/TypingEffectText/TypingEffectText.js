@@ -62,12 +62,12 @@ const TypingEffectText = props => {
       setIsErasing(true);
     }
 
-    if (isErasing && charIndex == 0) {
+    if (isErasing && charIndex === 0) {
       setIsErasing(false);
       setIsFirstStart(true);
       setArrayIndex(arrayIndex + 1);
 
-      if (arrayIndex == textArray.length - 1) {
+      if (arrayIndex === textArray.length - 1) {
         setArrayIndex(0);
       }
     }
