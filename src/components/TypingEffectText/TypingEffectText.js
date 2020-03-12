@@ -1,84 +1,84 @@
+//inspired by https://codepen.io/Coding_Journey/pen/BEMgbX
 import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 
 import './TypingEffectText.scss';
 
-const textArray = [' a', ' Patrick Wade', ' a developer'];
+const textArray = ['Patrick Wade', 'a developer', 'welcoming you'];
 const typingDelay = 200;
 const erasingDelay = 100;
+const newTextDelay = 2000;
 
 function type(charIndex, arrayIndex, textSpan, cursorSpan) {
-  console.log('type executed');
-  if (charIndex < textArray[arrayIndex].length) {
-    if (!cursorSpan.current.classList.contains('typing'))
-      cursorSpan.current.classList.add('typing');
-    textSpan.current.textContent += textArray[arrayIndex].charAt(charIndex);
-  } else {
-    /*cursorSpan.current.classList.remove('typing');
-    setTimeout(
-      erase(charIndex, arrayIndex, textSpan, cursorSpan),
-      newTextDelay
-    );*/
-  }
+  if (!cursorSpan.current.classList.contains('typing'))
+    cursorSpan.current.classList.add('typing');
+  textSpan.current.textContent += textArray[arrayIndex].charAt(charIndex);
 }
 
-function erase(charIndex, arrayIndex, textSpan, cursorSpan, setCharIndex) {
-  if (charIndex > 0) {
-    if (!cursorSpan.current.classList.contains('typing'))
-      cursorSpan.current.classList.add('typing');
-    textSpan.current.textContent = textArray[arrayIndex].substring(
-      0,
-      charIndex - 1
-    );
-    charIndex--;
-    setTimeout(
-      erase(charIndex, arrayIndex, textSpan, cursorSpan, setCharIndex),
-      erasingDelay
-    );
-  } else {
-    cursorSpan.current.classList.remove('typing');
-    arrayIndex++;
-    if (arrayIndex >= textArray.length) arrayIndex = 0;
-    setTimeout(
-      type(charIndex, arrayIndex, textSpan, cursorSpan, setCharIndex),
-      typingDelay + 1100
-    );
-  }
+function erase(charIndex, arrayIndex, textSpan, cursorSpan) {
+  if (!cursorSpan.current.classList.contains('typing'))
+    cursorSpan.current.classList.add('typing');
+  textSpan.current.textContent = textArray[arrayIndex].substring(
+    0,
+    charIndex - 1
+  );
 }
 
-const TypingEffectText = startTime => {
+const TypingEffectText = props => {
   const [arrayIndex, setArrayIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
-  const [firstStart, setFirstStart] = useState(true);
+  const [isFirstStart, setIsFirstStart] = useState(true);
+  const [isErasing, setIsErasing] = useState(false);
 
   const textSpan = useRef(null);
   const cursorSpan = useRef(null);
 
   React.useEffect(() => {
     let timer;
-    if (firstStart) {
-      console.log('if');
-      console.log(typingDelay);
+
+    if (isFirstStart) {
+      if (cursorSpan.current.classList.contains('typing'))
+        cursorSpan.current.classList.remove('typing');
       timer = setTimeout(() => {
         type(charIndex, arrayIndex, textSpan, cursorSpan);
+        setIsFirstStart(false);
         setCharIndex(charIndex + 1);
-        setFirstStart(false);
-      }, startTime);
-    } else {
-      console.log('else');
+      }, props.startTime);
+    } else if (!isErasing && charIndex < textArray[arrayIndex].length) {
       timer = setTimeout(() => {
         type(charIndex, arrayIndex, textSpan, cursorSpan);
         setCharIndex(charIndex + 1);
       }, typingDelay);
+    } else {
+      if (!isErasing && cursorSpan.current.classList.contains('typing'))
+        cursorSpan.current.classList.remove('typing');
+      timer = setTimeout(
+        () => {
+          erase(charIndex, arrayIndex, textSpan, cursorSpan);
+          setCharIndex(charIndex - 1);
+        },
+        isErasing ? erasingDelay : newTextDelay
+      );
+      setIsErasing(true);
+    }
+
+    if (isErasing && charIndex == 0) {
+      setIsErasing(false);
+      setIsFirstStart(true);
+      setArrayIndex(arrayIndex + 1);
+
+      if (arrayIndex == textArray.length - 1) {
+        setArrayIndex(0);
+      }
     }
 
     return () => clearTimeout(timer);
-  }, [textSpan.current.textContent]);
+  }, [charIndex]);
 
   return (
     <div>
       <p className="typing-effect">
-        Hello, I am
+        Hello, I am&nbsp;
         <span className="typing-effect--typed-text" ref={textSpan}></span>
         <span className="typing-effect--cursor" ref={cursorSpan}>
           &nbsp;
