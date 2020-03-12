@@ -1,6 +1,6 @@
 ## 🚀 Patrick Wade Portfolio and Blog
 
-1.  **Create a Gatsby site.**
+1.  **Portfolio**
 
 First ToDo of this project.
 
@@ -12,8 +12,10 @@ To be created when portfolio is finished.
 
 - Add Lint
 - Finish Landing-Section
-- Arrow to Move towards next section
-- Navigation starts at next section
+  - Responsive
+  - Arrow
+  - Styling (Font, colors)
+- Navigation at start oft next section
 
 <!--
 ## 🧐 What's inside?

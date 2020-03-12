@@ -1,18 +1,18 @@
+@import '../../variables.scss';
+
 .typing-effect {
-  font-size: 3rem;
-  font-weight: bold;
+  font-size: 48px;
   letter-spacing: 0.1rem;
-  text-align: center;
-  overflow: hidden;
+  color: $neutral-color-9;
+  font-weight: 200;
 
   &--typed-text {
-    font-weight: normal;
-    color: #dd7732;
+    color: $primary-color-8;
   }
 
   &--cursor {
     display: inline-block;
-    background-color: #ccc;
+    background-color: $neutral-color-9;
     margin-left: 0.1rem;
     width: 3px;
     animation: blink 1s infinite;
