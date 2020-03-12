@@ -77,15 +77,15 @@ const TypingEffectText = props => {
 
   return (
     <div>
-      <p className="typing-effect">
+      <div className="typing-effect">
         <span>Hello, I am</span>
-        <div>
+        <div className="typing-effect--container">
           <span className="typing-effect--typed-text" ref={textSpan}></span>
           <span className="typing-effect--cursor" ref={cursorSpan}>
             &nbsp;
           </span>
         </div>
-      </p>
+      </div>
     </div>
   );
 };

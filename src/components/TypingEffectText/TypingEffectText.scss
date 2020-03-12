@@ -9,6 +9,15 @@
   flex-direction: column;
   min-width: 320px;
 
+  span {
+    text-align: center;
+  }
+
+  &--container {
+    display: flex;
+    justify-content: center;
+  }
+
   &--typed-text {
     color: $primary-color-8;
   }
