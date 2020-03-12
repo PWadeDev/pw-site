@@ -7,7 +7,7 @@ import particleOptions from './ParticleOptions';
 import ScrollIndicator from '../ScrollIndicator/ScrollIndicator';
 
 const typingEffectStartTime = 1500;
-const scrollIndicatorStartTime = 3000;
+const scrollIndicatorStartTime = 2000;
 
 const LandingSection = () => (
   <div className="landing-section">

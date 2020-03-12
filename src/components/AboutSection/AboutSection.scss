@@ -1,0 +1,19 @@
+@import '../../variables.scss';
+
+.about-section {
+  display: flex;
+  align-items: center;
+  margin-top: 48px;
+  flex-direction: column;
+
+  &--tiitle {
+    margin-bottom: 0px;
+  }
+
+  &--title-bar {
+    margin-top: 12px;
+    height: 4px;
+    color: black; //Styling WIP
+    width: 70px;
+  }
+}

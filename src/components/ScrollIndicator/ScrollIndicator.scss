@@ -14,7 +14,7 @@
   position: absolute;
   top: 80%;
   left: calc(50% - (75 / 2));
-  animation: shake-vertical 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 4s both;
+  animation: shake-vertical 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 3s both;
   transition: opacity 1s, height 0.5s, width 0.5s, color 0.5s;
 
   &.visible {

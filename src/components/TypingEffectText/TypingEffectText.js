@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 
 import './TypingEffectText.scss';
 
-const textArray = ['Patrick Wade', 'a developer', 'welcoming you'];
-const typingDelay = 200;
-const erasingDelay = 100;
+const textArray = ['Patrick Wade', 'a developer'];
+const typingDelay = 100;
+const erasingDelay = 80;
 const newTextDelay = 2000;
 
 function type(charIndex, arrayIndex, textSpan, cursorSpan) {
@@ -78,11 +78,13 @@ const TypingEffectText = props => {
   return (
     <div>
       <p className="typing-effect">
-        Hello, I am&nbsp;
-        <span className="typing-effect--typed-text" ref={textSpan}></span>
-        <span className="typing-effect--cursor" ref={cursorSpan}>
-          &nbsp;
-        </span>
+        <span>Hello, I am</span>
+        <div>
+          <span className="typing-effect--typed-text" ref={textSpan}></span>
+          <span className="typing-effect--cursor" ref={cursorSpan}>
+            &nbsp;
+          </span>
+        </div>
       </p>
     </div>
   );
