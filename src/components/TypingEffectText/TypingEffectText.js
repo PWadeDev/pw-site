@@ -73,7 +73,7 @@ const TypingEffectText = props => {
     }
 
     return () => clearTimeout(timer);
-  }, [charIndex]);
+  }, [arrayIndex, charIndex, isErasing, isFirstStart, props.startTime]);
 
   return (
     <div>

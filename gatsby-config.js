@@ -37,5 +37,13 @@ module.exports = {
       },
     },
     `gatsby-plugin-smoothscroll`,
+    {
+      resolve: `gatsby-plugin-typescript`,
+      options: {
+        isTSX: true,
+        jsxPragma: `jsx`,
+        allExtensions: true,
+      },
+    },
   ],
 };

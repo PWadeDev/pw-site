@@ -12,7 +12,7 @@ const ScrollIndicator = props => {
       scrollIndicator.current.classList.add('visible');
     }, props.startTime);
     return () => clearTimeout(timer);
-  }, []);
+  }, [props.startTime]);
 
   return (
     <>
