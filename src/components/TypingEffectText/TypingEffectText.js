@@ -73,7 +73,8 @@ const TypingEffectText = props => {
     }
 
     return () => clearTimeout(timer);
-  }, [arrayIndex, charIndex, isErasing, isFirstStart, props.startTime]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [charIndex]);
 
   return (
     <div>

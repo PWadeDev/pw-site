@@ -1,7 +1,7 @@
 {
   "name": "patrick",
   "private": true,
-  "description": "WIP: Portfolio and Blog",
+  "description": "WIP: Portfolio",
   "version": "0.1.0",
   "author": "Patrick Wade <patrickwadedev@gmail.com>",
   "dependencies": {
@@ -21,7 +21,6 @@
     "node-sass": "^4.13.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
-    "react-bootstrap": "^1.0.0-beta.17",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
     "react-particles-js": "^2.7.1"

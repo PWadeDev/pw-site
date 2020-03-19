@@ -1,4 +1,4 @@
-## 🚀 Patrick Wade Portfolio and Blog
+## 🚀 Patrick Wade Portfolio
 
 # 1. **Portfolio**
 
@@ -8,7 +8,6 @@ First ToDo of this project.
 
 - Refactors js to ts
 - Finish Landing-Section
-  - Responsive
   - Styling (Font, colors)
 - Remove gatsby icon
 - Navbar and Footer
@@ -17,3 +16,8 @@ First ToDo of this project.
 # 2. **Blog**
 
 To be created when portfolio is finished.
+
+## **Credits**
+
+This portfolio is inspired by this great portfolio:
+http://findmatthew.com/

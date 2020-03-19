@@ -1,0 +1,52 @@
+@import '../../variables.scss';
+
+.footer {
+  background-color: $neutral-color-5;
+  border-top: 3px solid $primary-color-8;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &--container {
+    height: 60px;
+    width: 60px;
+    margin: 0px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    fill: $primary-color-8;
+    background-size: 210% 210%;
+    background-image: linear-gradient(
+      to top,
+      $primary-color-8 50%,
+      transparent 50%
+    );
+    -webkit-transition: all ease-in-out 300ms;
+    -moz-transition: all ease-in-out 300ms;
+    -ms-transition: all ease-in-out 300ms;
+    -o-transition: all ease-in-out 300ms;
+    transition: all ease-in-out 300ms;
+
+    &--logo {
+      width: 50px;
+      height: 50px;
+    }
+
+    &:hover {
+      background-position: 100% 100%;
+      fill: $neutral-color-5;
+      -webkit-transition: all ease-in-out 300ms;
+      -moz-transition: all ease-in-out 300ms;
+      -ms-transition: all ease-in-out 300ms;
+      -o-transition: all ease-in-out 300ms;
+      transition: all ease-in-out 300ms;
+    }
+
+    path {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
