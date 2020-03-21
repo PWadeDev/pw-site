@@ -47,7 +47,7 @@ const ExperienceSection = () => {
 
   return (
     <div className="experience-section">
-      <h1 className="experience-section--title">Worked with</h1>
+      <h1 className="experience-section--title">Clients</h1>
       <div className="experience-section--title-bar"></div>
       <div className="row experience-section--content-container">
         <div className="col-sm-12 col-md-6 experience-section--col">
