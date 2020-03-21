@@ -7,6 +7,7 @@
 - Contact form
 - Back to top button
 - Add blog
+- Custom logo
 
 ## **Credits**
 
