@@ -1,7 +1,9 @@
 @import '../../variables.scss';
 
-.navbar {
+.nav {
   background-color: $neutral-color-5;
   border-bottom: 3px solid $primary-color-8;
   height: 50px;
+  justify-content: center;
+  align-items: center;
 }

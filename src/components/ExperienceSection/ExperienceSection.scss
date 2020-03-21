@@ -1,6 +1,59 @@
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins';
 @import '../../variables.scss';
 
 .experience-section {
   background-color: $neutral-color-8;
-  height: 50vh;
+  display: flex;
+  align-items: center;
+  padding: 48px 0px;
+  flex-direction: column;
+
+  &--title {
+    margin-bottom: 12px;
+  }
+
+  &--title-bar {
+    height: 4px;
+    background-color: $neutral-color-5;
+    width: 120px;
+  }
+
+  &--content-container {
+    width: 100%;
+    min-height: 250px;
+    max-width: 900px;
+    padding: 12px;
+  }
+
+  &--col {
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include media-breakpoint-down(md) {
+      min-height: 110px;
+    }
+  }
+
+  &--logo {
+    height: 100px;
+    width: 300px;
+
+    &-cofinpro {
+      height: 64px;
+      width: 280px;
+    }
+
+    &-aareal {
+      height: 57px;
+      width: 280px;
+    }
+
+    &-sae {
+      width: 110px;
+      height: 80px;
+    }
+  }
 }

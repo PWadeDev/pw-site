@@ -1,9 +1,9 @@
 import * as React from 'react';
 
-import * as TwitterLogo from '../../images/svg/twitter-logo.svg';
-import * as CodepenLogo from '../../images/svg/codepen-logo.svg';
-import * as GithubLogo from '../../images/svg/github-logo.svg';
-import * as LinkedinLogo from '../../images/svg/linkedin-logo.svg';
+const TwitterLogo = require('../../images/svg/twitter-logo.svg');
+const CodepenLogo = require('../../images/svg/codepen-logo.svg');
+const GithubLogo = require('../../images/svg/github-logo.svg');
+const LinkedinLogo = require('../../images/svg/linkedin-logo.svg');
 
 import './Footer.scss';
 

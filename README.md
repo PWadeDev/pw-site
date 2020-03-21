@@ -1,21 +1,12 @@
-## 🚀 Patrick Wade Portfolio
+## 🚀 Patrick Wade Personal Site
 
-# 1. **Portfolio**
+# **ToDo´s**
 
-First ToDo of this project.
-
-## 1.1. **Current ToDos**
-
-- Refactors js to ts
-- Finish Landing-Section
-  - Styling (Font, colors)
-- Remove gatsby icon
-- Navbar and Footer
-- About section
-
-# 2. **Blog**
-
-To be created when portfolio is finished.
+- Navigation
+- Scrolls-Animations
+- Contact form
+- Back to top button
+- Add blog
 
 ## **Credits**
 

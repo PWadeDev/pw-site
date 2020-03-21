@@ -1,7 +1,7 @@
 {
   "name": "patrick",
   "private": true,
-  "description": "WIP: Portfolio",
+  "description": "Personal site",
   "version": "0.1.0",
   "author": "Patrick Wade <patrickwadedev@gmail.com>",
   "dependencies": {
